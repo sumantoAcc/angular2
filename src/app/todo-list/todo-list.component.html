@@ -1,0 +1,18 @@
+<hr>
+
+<!-- <div *ngFor="let todo of todoItems">
+
+   <button style="margin: 10px;" mat-button color="primary" (click)="updateSelected(todo)">{{ todo.title }}</button>
+</div> -->
+
+<mat-card style="margin: 10px; width: 300px;" *ngFor="let todo of todoItems">
+    
+    <mat-card-title>{{todo.title}}</mat-card-title>
+
+    <mat-card-content>{{todo.desc}}</mat-card-content>
+
+</mat-card>
+
+<button mat-raised-button color="accent" (click)="addToDoItem()">Add</button>
+
+<app-todo-detail [selectedTodo] = "selectedTodoItem"></app-todo-detail>

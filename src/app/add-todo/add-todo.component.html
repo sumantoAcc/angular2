@@ -1,0 +1,16 @@
+  <div> <form [formGroup]="todoForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Desc</mat-label>
+            <input matInput formControlName="desc">
+          </mat-form-field>
+          <button mat-raised-buton  color="primary" (click)="addToList()">Save</button>
+        </form>
+        <div>
+            {{ title.value }}  {{ desc.value }}
+        </div>
+</div>
