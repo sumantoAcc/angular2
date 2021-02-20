@@ -32,5 +32,8 @@ export class TodoListComponent implements OnInit {
       width:'300px'
     });
   }
-
+  deleteToDoItem(index) {
+    this.toDoService.deleteToDos(index);
+    console.log(index);
+  }
 }

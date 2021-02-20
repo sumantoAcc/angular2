@@ -5,13 +5,13 @@
    <button style="margin: 10px;" mat-button color="primary" (click)="updateSelected(todo)">{{ todo.title }}</button>
 </div> -->
 
-<mat-card style="margin: 10px; width: 300px;" *ngFor="let todo of todoItems">
+<mat-card style="margin: 10px; width: 300px;" *ngFor="let todo of todoItems; index as i">
     
     <mat-card-title> {{todo.title}}</mat-card-title>
     <mat-card-content>{{todo.desc}}</mat-card-content>
     <mat-card-content>{{todo.desc2}}</mat-card-content>
     <!-- <button mat-raised-button  (click)="deleteToDoItem()">Delete</button>{{todo.title}},{{todo.desc}},{{todo.desc2}} -->
-    <!-- <button mat-raised-button  (click)="updateTodoItem()">Update</button>  -->
+     <button mat-raised-button  (click)="deleteToDoItem(i)">Delete</button> 
 </mat-card>
 
 <button mat-raised-button color="accent" (click)="addToDoItem()">Add</button>

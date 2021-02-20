@@ -29,6 +29,9 @@ export class TodoService {
   getToDos() {
     return this.todoItems;
   }
+  deleteToDos(indexToDelete) {
+    this.todoItems.splice(indexToDelete, 1);
+  }
 
   addToDo(todo:ToDo) {
     this.todoItems.push(todo);
