@@ -19,7 +19,8 @@ export class AddTodoComponent implements OnInit {
   ngOnInit(): void {
     this.todoForm = new FormGroup({
       title : new FormControl('', Validators.required),
-      desc : new FormControl('')
+      desc : new FormControl(''),
+      desc2: new FormControl('')
     });
   }
 
@@ -30,11 +31,15 @@ export class AddTodoComponent implements OnInit {
   get desc() {
     return this.todoForm.get('desc') as FormControl;
   }
+  get desc2() {
+    return this.todoForm.get('desc2') as FormControl;
+  }
 
   addToList() {
-    const toDo:ToDo = {
-      title : this.title.value,
-      desc : this.desc.value
+    const toDo: ToDo = {
+      title: this.title.value,
+      desc: this.desc.value,
+      desc2: this.desc2.value,
     }
     this.toDoService.addToDo(toDo);
     this.dialogRef.close();

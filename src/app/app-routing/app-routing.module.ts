@@ -5,12 +5,8 @@ import { TodoListComponent } from '../todo-list/todo-list.component';
 
 const appRouts : Routes = [
   {
-    path:'list',
+    path:'',
     component:TodoListComponent,
-  },
-  {
-    path:'add',
-    component:AddTodoComponent,
   }
 ]
 

@@ -8,16 +8,19 @@ export class TodoService {
 
   todoItems: ToDo[] = [
     {
-      title: 'Workout',
-      desc: 'Wakeup and do workout'
+      title: 'Angular-evening',
+      desc: 'Santhosh Kalisamy',
+      desc2: 'topics covered like routing, angular materials.'
     },
     {
-      title: 'Assignments',
-      desc: 'Complete assignments'
+      title: 'Java-Evening',
+      desc: 'Sharanaya',
+      desc2: 'topics covered like lambda expressions, stream()'
     },
     {
-      title: 'Shopping',
-      desc: 'Buy fruits'
+      title: 'React Native',
+      desc: 'Tajammul Pasha',
+      desc2: 'Built Mobile News-feed'
     }
   ]
 
