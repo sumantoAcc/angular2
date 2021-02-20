@@ -23,6 +23,10 @@ export class TodoService {
       desc2: 'Built Mobile News-feed'
     }
   ]
+  title : string;
+  desc : string;
+  desc2 : string;
+  INDEX : number;
 
   constructor() { }
 

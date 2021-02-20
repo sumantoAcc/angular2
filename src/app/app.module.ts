@@ -17,6 +17,7 @@ import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {MatDialogModule} from '@angular/material/dialog';
+import { UpdateTodoComponent } from './update-todo/update-todo.component';
 
 
 
@@ -25,7 +26,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     AppComponent,
     TodoListComponent,
     TodoDetailComponent,
-    AddTodoComponent
+    AddTodoComponent,
+    UpdateTodoComponent
   ],
   imports: [
     BrowserModule,

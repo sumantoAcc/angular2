@@ -4,6 +4,7 @@ import { TodoService } from '../todo.service';
 
 import { MatDialog } from '@angular/material/dialog';
 import { AddTodoComponent } from '../add-todo/add-todo.component';
+import { UpdateTodoComponent } from '../update-todo/update-todo.component';
 
 @Component({
   selector: 'app-todo-list',
@@ -35,5 +36,17 @@ export class TodoListComponent implements OnInit {
   deleteToDoItem(index) {
     this.toDoService.deleteToDos(index);
     console.log(index);
+  }
+  updateToDoItem(index) {
+    console.log(index);
+
+    this.toDoService.title = this.todoItems[index].title;
+    this.toDoService.desc = this.todoItems[index].desc;
+    this.toDoService.desc2 = this.todoItems[index].desc2;
+    this.toDoService.INDEX = index;
+
+    this.dialog.open(UpdateTodoComponent, {
+      width:'300px',
+    });
   }
 }

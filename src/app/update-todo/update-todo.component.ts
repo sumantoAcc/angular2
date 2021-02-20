@@ -4,14 +4,12 @@ import { ToDo } from '../modal/todo';
 import { TodoService } from '../todo.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { TodoListComponent } from '../todo-list/todo-list.component';
-
 @Component({
-  selector: 'app-add-todo',
-  templateUrl: './add-todo.component.html',
-  styleUrls: ['./add-todo.component.scss']
+  selector: 'app-update-todo',
+  templateUrl: './update-todo.component.html',
+  styleUrls: ['./update-todo.component.scss']
 })
-export class AddTodoComponent implements OnInit {
-
+export class UpdateTodoComponent implements OnInit {
 
   todoForm: FormGroup;
   constructor(private toDoService: TodoService, private dialogRef: MatDialogRef<TodoListComponent>
@@ -30,9 +28,9 @@ export class AddTodoComponent implements OnInit {
     if (z == undefined)
       z = "";
     this.todoForm = new FormGroup({
-      title: new FormControl("", Validators.required),
-      desc: new FormControl(""),
-      desc2: new FormControl("")
+      title: new FormControl(x, Validators.required),
+      desc: new FormControl(y),
+      desc2: new FormControl(z)
     });
   }
 
@@ -47,13 +45,14 @@ export class AddTodoComponent implements OnInit {
     return this.todoForm.get('desc2') as FormControl;
   }
 
-  addToList() {
+  updateToList() {
     const toDo: ToDo = {
       title: this.title.value,
       desc: this.desc.value,
       desc2: this.desc2.value,
     }
-    this.toDoService.addToDo(toDo);
+    this.toDoService.todoItems[this.toDoService.INDEX]=toDo;
+    //this.toDoService.addToDo(toDo);
     this.dialogRef.close();
   }
 
